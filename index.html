@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AyurVeda Wellness Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:#f6f9f7;
+color:#333;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+width:100%;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+z-index:999;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+padding:15px;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+color:#4A7C59;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.btn{
+background:#4A7C59;
+color:white;
+padding:10px 22px;
+border-radius:30px;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+background:url("https://lh3.googleusercontent.com/gps-cs-s/AHVAweoiRoUJsObx68rJUVbNtCIQ5D6SJre-UsMeab5ldhlizROVElHO2LaXuR5H7sL6NPyiKU0DRvTUnH5Hn51HkKIyvNPE63sMRj81IVC65UD6JaLwDvb0QjFqL08e1kSiqsBtgQfO=s1340-w720-h1340-rw") center/cover;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:700px;
+animation:slideDown 1s ease;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+/* SECTION */
+
+section{
+max-width:1200px;
+margin:auto;
+padding:90px 20px;
+}
+
+.title{
+text-align:center;
+font-size:36px;
+color:#4A7C59;
+margin-bottom:50px;
+}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transform:translateY(80px);
+opacity:0;
+transition:all .8s ease;
+}
+
+.card.show{
+transform:translateY(0);
+opacity:1;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h3{
+margin-bottom:10px;
+color:#2D5016;
+}
+
+/* AYURVEDA INFO */
+
+.info{
+background:#eef6f2;
+border-radius:15px;
+padding:40px;
+line-height:1.9;
+font-size:17px;
+}
+
+/* REVIEWS */
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.review-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.review-card h4{
+color:#4A7C59;
+margin-bottom:10px;
+}
+
+/* CONTACT */
+
+.contact-box{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-align:center;
+line-height:1.9;
+}
+
+/* MAP */
+
+.map{
+margin-top:40px;
+border-radius:15px;
+overflow:hidden;
+}
+
+.map iframe{
+width:100%;
+height:350px;
+border:0;
+}
+
+/* FLOATING WHATSAPP */
+
+.float-whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+padding:16px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+z-index:1000;
+}
+
+/* FOOTER */
+
+footer{
+background:#2D5016;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:60px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+section{
+padding:80px 20px;
+}
+
+}
+
+/* ANIMATIONS */
+
+@keyframes slideDown{
+from{
+opacity:0;
+transform:translateY(-50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+
+<div class="logo">AyurVeda Wellness</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#treatments">Treatments</a></li>
+<li><a href="#about">Ayurveda Info</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<a class="btn" href="#contact">Book</a>
+
+</nav>
+</header>
+
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Ancient Wisdom Modern Healing</h1>
+
+<p>
+Experience authentic Ayurvedic therapies that detoxify the body, restore balance and improve natural wellness.
+</p>
+
+<a class="btn" href="#contact">Book Consultation</a>
+
+</div>
+
+</section>
+
+
+<section id="treatments">
+
+<h2 class="title">Our Signature Treatments</h2>
+
+<div class="services">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35">
+<div class="card-content">
+<h3>Abhyanga Oil Massage</h3>
+<p>Warm herbal oil massage improving circulation and relaxing the body.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
+<div class="card-content">
+<h3>Shirodhara Therapy</h3>
+<p>Warm herbal oil poured on the forehead for deep mental relaxation.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
+<div class="card-content">
+<h3>Panchakarma Detox</h3>
+<p>Powerful Ayurvedic detox removing toxins from the body.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://divineayurvedahospital.com/wp-content/uploads/2024/04/Nasya-Treatment-1024x682.webp">
+<h3>Nasya Therapy</h3>
+<p>Herbal nasal therapy improving sinus health and breathing.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="about">
+
+<h2 class="title">About Ayurveda</h2>
+
+<div class="info">
+
+<p>Ayurveda is a natural healing system that originated in India more than 5000 years ago.</p>
+<p>It focuses on maintaining balance between the body, mind and spirit.</p>
+<p>According to Ayurveda the body is governed by three energies called Vata, Pitta and Kapha.</p>
+<p>Ayurvedic treatments use natural herbs, oils and detox therapies.</p>
+<p>These treatments help improve digestion, immunity and mental health.</p>
+<p>Ayurveda focuses on curing the root cause of diseases rather than just symptoms.</p>
+<p>Healthy lifestyle, proper diet and yoga are essential parts of Ayurvedic living.</p>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="title">Patient Reviews</h2>
+
+<div class="reviews">
+
+<div class="review-card">
+<h4>⭐⭐⭐⭐⭐</h4>
+<p>The Abhyanga massage was amazing. I felt relaxed and stress free after the therapy.</p>
+</div>
+
+<div class="review-card">
+<h4>⭐⭐⭐⭐⭐</h4>
+<p>Doctor explained everything clearly and the treatment really improved my digestion.</p>
+</div>
+
+<div class="review-card">
+<h4>⭐⭐⭐⭐⭐</h4>
+<p>Very peaceful clinic environment and professional Ayurvedic treatments.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<h2 class="title">Clinic Contact</h2>
+
+<div class="contact-box">
+
+<p><b>Address</b></p>
+
+<p>
+Shop No 1, Near Raj Park Opposite Shani Mandir<br>
+Near Khotar High School<br>
+Kakdekar Road, Chinchwad<br>
+Pune-411033, Maharashtra
+</p>
+
+<br>
+
+<p><b>Contact</b></p>
+<p>94211 71024</p>
+
+<br>
+
+<p><b>Instagram</b></p>
+<p>@username for doc</p>
+
+<br>
+
+<a class="btn" href="tel:9421171024">Call Now</a>
+
+</div>
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=Chinchwad%20Pune&output=embed">
+</iframe>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 AyurVeda Wellness Clinic</p>
+
+</footer>
+
+
+<a class="float-whatsapp" href="https://wa.me/919421171024">💬</a>
+
+
+<script>
+
+const cards=document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+
+cards.forEach(card=>{
+
+let top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+card.classList.add("show");
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
